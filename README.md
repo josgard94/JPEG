@@ -4,6 +4,7 @@ Compression of images with JPEG algorithm using python and Huffman codes.
 The implementation that was carried out in this project uses huffman codes to reduce the size of the image.
 
 for its execution:
+
 1: - Compile the code corresponding to the JPEG algortimo, within this code a file with probability values of each value of intensity of the image is generated.
 
 2. Once the algorithm has been executed, we proceed to generate the huffman codes compiling the file huffman_codes.py, this algorithm generates a text file with the codes that have been generated from the probabilities.
