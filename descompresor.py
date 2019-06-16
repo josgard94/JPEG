@@ -1,5 +1,5 @@
 """
-	Centro de Estudios Avanzados y Tecnologicos del IPN
+	Centro de Investigacion y Estudios Avanzados del IPN
 			  Codificacion y compresion de datos
 
 				  Edgard Jose Diaz Tipacamu
