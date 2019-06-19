@@ -2,7 +2,7 @@
 	Autor: Edgard Jose Diaz Tipacamu
 	e.diaz@nartsoft.com.mx
 	27 de febrero de 2019
-	ediaz@tamps.cinvestav.mx
+	
 	Este codigo fuente realiza la descompresion, de un archivo comprimido usando el
 	programa generar_huffman_code.py
 
