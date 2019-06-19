@@ -1,10 +1,6 @@
-"""
-    
-    Centro de Investigacion y Estudios Avanzados del IPN
-    
+"""  
     Athor: Edgard Jose Diaz Tipacamu
-    ediaz@tamps.cinvestav.mx
-
+    e.diaz@nartsoft.com.mx
     Codificacion y compresion de datos.
 
     En este codigo fuente se realiza el proceso inverso del algoritmo JPEG,
