@@ -195,8 +195,8 @@ for i in range(0,alto):
     f.write("\n")
 
 
-keys = frecuencia.keys()
-elementos = temporal.values()
+keys = list(frecuencia.keys())
+elementos = list(temporal.values())
 
 tam = len(keys)
 
