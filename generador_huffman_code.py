@@ -27,6 +27,7 @@
 from decimal import Decimal
 import sys
 import os
+import operator
 result_probabilidades = "result.txt"
 fichero = sys.argv[2]
 
@@ -65,7 +66,11 @@ def compresor_huffman():
 # funcion que permite realizar el ordenamiento de las  probabilidades
 def ordenar_probabilidades(dic):
 	# la funcion sorted ordena el diccionario de probabilidades de menor a mayor 
-	ordenado = sorted(dic.items(), key = lambda (i, pi):pi);
+	
+	#ordenado = sorted(dic.items(), key = lambda (i, pi): pi);
+	ordenado = sorted(dic.items(), key = operator.itemgetter(1), reverse=False)
+	
+	
 	#retorna una tupla con las llaves del diccionario con respecto a las dos primeras probabilidad 
 	#que en este caso son los dos simbolos menos probables.
 	
@@ -83,13 +88,18 @@ def huffmanCode(dic):
 
     # Create a new distribution by merging lowest prob. pair
 	p_copy = dic.copy()
+	
 	K1, K2 = ordenar_probabilidades(dic)
+
 	p1, p2 = p_copy.pop(K1), p_copy.pop(K2)
 	p_copy[K1 + K2] = p1 + p2
 # Recurse and construct code on new distribution
+
 	c = huffmanCode(p_copy)
 	ca1a2 = c.pop(K1 + K2)
 	c[K1], c[K2] = ca1a2 + '0', ca1a2 + '1'
+
+
 	return c
 #################################################################################
 #Guardar el libro de codigos en fichero de texto plano
@@ -110,8 +120,8 @@ def TextEncode(codes, texto):
 	#print texto.split()
 	for ch in texto.split():
 		if ch in codes:
-			print ch, codes[ch]
- 			encode_text += codes[ch]
+			#print(ch, codes[ch])
+			encode_text += codes[ch]
 
 	return encode_text
 
@@ -140,7 +150,7 @@ def GeneraBitArray(cadena_binaria):
 
 
 compresor_huffman()
-print "\n\n"
+print("\n\n")
 
 """
 	Se realiza la obtencion del tamanio del archivo original y del archivo comprimido
