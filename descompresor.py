@@ -28,13 +28,17 @@ def descomprimir():
 
 #	Se usa para leer linea por linea el archivo binario
 	byte = file.read(1)
-
-	while(byte != ""):
-		byte = ord(byte)
-		bits = bin(byte)[2:].rjust(8,'0')
-		bit_string += bits
-		byte = file.read(1)
-
+	contador = 1;
+	while(byte != ''):
+		try:
+			byte = ord(byte)
+			contador = contador + 1;
+			print(contador)
+			bits = bin(byte)[2:].rjust(8,'0')
+			bit_string += bits
+			byte = file.read(1)
+		except:
+			break
 
 	TextEncode = quitar_bit_padding(bit_string) 
 	TextDescomprimido = decodificarTexto(TextEncode)
@@ -88,7 +92,17 @@ def decodificarTexto(TextEncode):
 		else:
 			tablecode[line[0]] = line[1].rstrip()
 # Invertimos el orden del diccionario para poder  realizar la busqueda por codigos
-	tablecode = dict((valor ,key) for (key,valor) in tablecode.iteritems())
+	
+	#tablecode = dict((valor ,key) for (key,valor) in tablecode.iteritems())
+	
+	kkey = list(tablecode.keys());
+	vvalues = list(tablecode.values());
+	ntablecode = {}
+	for i in range(len(vvalues)):
+		ntablecode[vvalues[i]] = kkey[i]
+	
+	tablecode = ntablecode;
+
 	codes.close() 
 	current_code = ""
 	decodetext = ""
