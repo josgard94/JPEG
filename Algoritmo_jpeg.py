@@ -120,7 +120,7 @@ def zigzag(matrix):
             break
 
     for i in range(indice,64):
-        
+       
         temporal[g] = aux[0,i];
 
         if aux[0,i] in frecuencia:
@@ -196,8 +196,9 @@ for i in range(0,alto):
 
 
 keys = list(frecuencia.keys())
-elementos = list(temporal.values())
 
+elementos = list(temporal.values())
+#print(elementos)
 tam = len(keys)
 
 probabilidades = {}
