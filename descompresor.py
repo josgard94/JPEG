@@ -33,7 +33,6 @@ def descomprimir():
 		try:
 			byte = ord(byte)
 			contador = contador + 1;
-			print(contador)
 			bits = bin(byte)[2:].rjust(8,'0')
 			bit_string += bits
 			byte = file.read(1)
